@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: #fff;
+}
+
+input {
+  font-family: "Roboto", sans-serif;
+}
+
+section {
+  width: 300px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.shopping-list-title {
+  width: 100%;
+  padding: 20px 10px;
+  text-align: center;
+  background-color: #1a1c21;
+  color: #fff;
+  font-weight: 500;
+}
+
+.shopping-list-board {
+  width: 100%;
+  height: 450px;
+  background-color: #8a8d93;
+}
+
+.shopping-list-item {
+  list-style-type: none;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.shopping-list-item li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.shopping-list-item button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: #f56695;
+}
+
+.shopping-list-item button:hover {
+  color: #eb3455;
+}
+
+.shopping-list-data input {
+  width: 300px;
+  height: 40px;
+  border: none;
+  padding: 0 5px;
+  margin-left: 6px;
+}
+
+.shopping-list-input input::placeholder {
+  color: #d6d6d6;
+}
+
+.shopping-list-data input:focus {
+  outline: none;
+  border: none;
+}
+
+.shopping-list-btn {
+  padding: 5px 125px;
+  background-color: #000;
+}
+
+.shopping-list-btn i {
+  font-size: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.shopping-list-btn button {
+  background: none;
+  border: none;
+  outline: none;
+}
