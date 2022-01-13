@@ -70,16 +70,16 @@ li {
   background-color: #ffc7d7;
 }
 
-.shopping-lists {
+.shopping-list-row {
   display: flex;
   justify-content: space-between;
 }
 
-.shopping-lists .shopping-delete-btn {
+.shopping-list-row .shopping-delete-btn {
   font-size: 20px;
 }
 
-.shopping-lists .shopping-delete-btn:hover {
+.shopping-list-row .shopping-delete-btn:hover {
   color: red;
   transform: scale(1.1);
 }
