@@ -4,100 +4,112 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100vh;
-  font-family: "Mochiy Pop P One", sans-serif;
-  background-color: #fff;
-}
-
-input {
-  font-family: "Roboto", sans-serif;
-}
-
-section {
-  width: 300px;
-  height: 600px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 10px;
+  font-family: "Mochiy Pop P One", sans-serif;
 }
 
-.shopping-list-title {
-  width: 100%;
-  padding: 20px 10px;
-  text-align: center;
-  background-color: #1a1c21;
-  color: #fff;
-  font-weight: 500;
+button,
+input,
+textarea {
+  border: none;
+  font-family: "Mochiy Pop P One", sans-serif;
 }
 
-.shopping-list-board {
-  width: 100%;
-  height: 450px;
-  background-color: #8a8d93;
+button {
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
-.shopping-list-item {
+button:focus,
+button:active,
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+  box-shadow: none;
+  outline: none;
+}
+
+ul,
+ol,
+li {
   list-style-type: none;
-  padding: 10px 20px;
-  margin: 0;
+  padding: 0;
 }
 
-.shopping-list-item li {
+.shopping {
+  width: 400px;
+  text-align: center;
+  -webkit-box-shadow: 10px 10px 15px -4px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 10px 10px 15px -4px rgba(0, 0, 0, 0.64);
+  box-shadow: 10px 10px 15px -4px rgba(0, 0, 0, 0.64);
+}
+
+.shopping-title {
+  padding: 10px;
+  color: #fff;
+  background: rgb(249, 14, 60);
+  background: linear-gradient(
+    11deg,
+    rgba(249, 14, 60, 1) 0%,
+    rgba(255, 96, 135, 1) 48%,
+    rgba(254, 156, 184, 1) 100%
+  );
+  border-radius: 10px 10px 0 0;
+}
+
+.shopping-board {
+  padding: 10px;
+  height: 500px;
+  background-color: #ffc7d7;
+}
+
+.shopping-lists {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
 }
 
-.shopping-list-item button {
-  cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
+.shopping-lists .shopping-delete-btn {
   font-size: 20px;
-  color: #f56695;
 }
 
-.shopping-list-item button:hover {
-  color: #eb3455;
+.shopping-lists .shopping-delete-btn:hover {
+  color: red;
+  transform: scale(1.1);
 }
 
-.shopping-list-data input {
-  width: 300px;
-  height: 40px;
-  border: none;
-  padding: 0 5px;
-  margin-left: 6px;
+.shopping-input-group {
+  background: rgb(249, 14, 60);
+  background: linear-gradient(
+    11deg,
+    rgba(249, 14, 60, 1) 0%,
+    rgba(255, 96, 135, 1) 48%,
+    rgba(254, 156, 184, 1) 100%
+  );
+  border-radius: 0 0 10px 10px;
 }
 
-.shopping-list-input input::placeholder {
-  color: #d6d6d6;
+.shopping-input,
+.shopping-add-btn {
+  display: block;
 }
 
-.shopping-list-data input:focus {
-  outline: none;
-  border: none;
+.shopping-input {
+  width: 100%;
+  padding: 10px;
 }
 
-.shopping-list-btn {
-  padding: 5px 125px;
-  background-color: #000;
-}
-
-.shopping-list-btn i {
+.shopping-add-btn {
+  margin: 0 auto;
   font-size: 50px;
-  color: #fff;
-  cursor: pointer;
 }
 
-.shopping-list-btn button {
-  background: none;
-  border: none;
-  outline: none;
+.shopping-add-btn:hover {
+  transform: scale(1.1);
 }
