@@ -6,10 +6,7 @@
 body {
   width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: #ced3df;
   font-family: "Mochiy Pop P One", sans-serif;
 }
 
@@ -45,7 +42,10 @@ li {
 
 .shopping {
   width: 400px;
+  margin: 0 auto;
   text-align: center;
+  background-color: #ffc7d7;
+  border-radius: 20px;
   -webkit-box-shadow: 10px 10px 15px -4px rgba(0, 0, 0, 0.64);
   -moz-box-shadow: 10px 10px 15px -4px rgba(0, 0, 0, 0.64);
   box-shadow: 10px 10px 15px -4px rgba(0, 0, 0, 0.64);
@@ -61,27 +61,36 @@ li {
     rgba(255, 96, 135, 1) 48%,
     rgba(254, 156, 184, 1) 100%
   );
-  border-radius: 10px 10px 0 0;
+  border-radius: 20px 20px 0 0;
 }
 
+/* height에 픽셀을 줘서 픽셀단위로 만드는 것은 접근성에 좋지 않다. */
 .shopping-board {
-  padding: 10px;
   height: 500px;
-  background-color: #ffc7d7;
+  overflow-y: auto;
 }
 
 .shopping-list-row {
   display: flex;
   justify-content: space-between;
+  padding: 8px 32px;
 }
 
 .shopping-list-row .shopping-delete-btn {
+  color: #fff;
   font-size: 20px;
 }
 
 .shopping-list-row .shopping-delete-btn:hover {
   color: red;
   transform: scale(1.1);
+}
+
+.shopping-divider {
+  width: 90%;
+  height: 2px;
+  margin: 0 auto;
+  background-color: rgba(255, 96, 135, 1);
 }
 
 .shopping-input-group {
@@ -92,12 +101,7 @@ li {
     rgba(255, 96, 135, 1) 48%,
     rgba(254, 156, 184, 1) 100%
   );
-  border-radius: 0 0 10px 10px;
-}
-
-.shopping-input,
-.shopping-add-btn {
-  display: block;
+  border-radius: 0 0 20px 20px;
 }
 
 .shopping-input {
@@ -106,8 +110,12 @@ li {
 }
 
 .shopping-add-btn {
-  margin: 0 auto;
-  font-size: 50px;
+  width: 48px;
+  height: 48px;
+  font-size: 28px;
+  color: rgba(255, 96, 135, 1);
+  background-color: #fff;
+  border-radius: 50%;
 }
 
 .shopping-add-btn:hover {

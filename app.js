@@ -19,10 +19,10 @@ function onAdd () {
 function createLists (listItem) {
 
     const list = document.createElement('div');
-    list.setAttribute('class', 'shopping-list');
+    list.setAttribute('class', 'shopping-list-row');
     
     const listRow = document.createElement('li');
-    listRow.setAttribute('class', 'shopping-list-row');
+    listRow.setAttribute('class', 'shopping-list');
 
     const text = document.createElement('span');
     text.setAttribute('class', 'shopping-list');
@@ -32,15 +32,22 @@ function createLists (listItem) {
     deleteBtn.setAttribute('class', 'shopping-delete-btn');
     deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
     deleteBtn.addEventListener('click', () => {
-        list.removeChild(listRow);
+        shoppingBoard.removeChild(listRow);
     })
 
-    listRow.appendChild(text);
-    listRow.appendChild(deleteBtn);
+    const divider = document.createElement('div');
+    divider.setAttribute('class', 'shopping-divider');
 
-    list.appendChild(listRow);
+    list.appendChild(text);
+    list.appendChild(deleteBtn);
+    
 
-    return list;
+    listRow.appendChild(list);
+    listRow.appendChild(divider);
+
+
+
+    return listRow;
 }
 
 addBtn.addEventListener('click', () => {
