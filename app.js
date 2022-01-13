@@ -6,23 +6,29 @@ const input = document.querySelector('.shopping-input');
 
 function onAdd () {
     const listItem = input.value;
-
+    if(listItem === '') {
+        input.focus();
+        return;
+    }
     const list = createLists(listItem);
 
     shoppingBoard.appendChild(list);
 
+    list.scrollIntoView({
+        block: 'center',
+        behavior: 'smooth'
+    })
+
     input.value = '';
     input.focus();
-
 }
 
 function createLists (listItem) {
+    const listRow = document.createElement('li');
+    listRow.setAttribute('class', 'shopping-list');
 
     const list = document.createElement('div');
     list.setAttribute('class', 'shopping-list-row');
-    
-    const listRow = document.createElement('li');
-    listRow.setAttribute('class', 'shopping-list');
 
     const text = document.createElement('span');
     text.setAttribute('class', 'shopping-list');
@@ -35,21 +41,24 @@ function createLists (listItem) {
         shoppingBoard.removeChild(listRow);
     })
 
-    const divider = document.createElement('div');
-    divider.setAttribute('class', 'shopping-divider');
+    const itemDivider = document.createElement('div');
+    itemDivider.setAttribute('class', 'shopping-divider');
 
     list.appendChild(text);
     list.appendChild(deleteBtn);
     
-
     listRow.appendChild(list);
-    listRow.appendChild(divider);
-
-
+    listRow.appendChild(itemDivider);
 
     return listRow;
 }
 
 addBtn.addEventListener('click', () => {
     onAdd();
+})
+
+input.addEventListener('keydown', (event) => {
+    if(event.key === 'Enter') {
+        onAdd();
+    }
 })
