@@ -23,42 +23,37 @@ function onAdd () {
     input.focus();
 }
 
+let id = 0;
 function createLists (listItem) {
     const listRow = document.createElement('li');
     listRow.setAttribute('class', 'shopping-list');
-
-    const list = document.createElement('div');
-    list.setAttribute('class', 'shopping-list-row');
-
-    const text = document.createElement('span');
-    text.setAttribute('class', 'shopping-list');
-    text.innerText = listItem;
-
-    const deleteBtn = document.createElement('button');
-    deleteBtn.setAttribute('class', 'shopping-delete-btn');
-    deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
-    deleteBtn.addEventListener('click', () => {
-        shoppingBoard.removeChild(listRow);
-    })
-
-    const itemDivider = document.createElement('div');
-    itemDivider.setAttribute('class', 'shopping-divider');
-
-    list.appendChild(text);
-    list.appendChild(deleteBtn);
-    
-    listRow.appendChild(list);
-    listRow.appendChild(itemDivider);
-
+    listRow.setAttribute('data-id', id);
+    listRow.innerHTML = `
+                <div class="shopping-list-row">
+                    <span class="shopping-list">${listItem}</span>
+                    <button class="shopping-delete-btn">
+                        <i class="fas fa-trash" data-id=${id}></i>
+                    </button>
+                </div>
+                <div class="shopping-divider"></div>`;
+        id++;
     return listRow;
 }
 
 addBtn.addEventListener('click', () => {
     onAdd();
-})
+});
 
 input.addEventListener('keydown', (event) => {
     if(event.key === 'Enter') {
         onAdd();
     }
-})
+});
+
+shoppingBoard.addEventListener('click', (event) => {
+    const id = event.target.dataset.id
+    if(id) {
+        const toBeDeleted = document.querySelector(`.shopping-list[data-id="${id}"]`);
+        toBeDeleted.remove();
+    }
+});
